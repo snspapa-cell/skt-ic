@@ -63,7 +63,19 @@
   * {
     @apply border-border;
   }
+  html {
+    font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont,
+      system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo',
+      'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji',
+      'Segoe UI Symbol', sans-serif;
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* 앵커 스크롤 시 헤더 높이만큼 오프셋 */
+html {
+  scroll-padding-top: 5rem;
 }
