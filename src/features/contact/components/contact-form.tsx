@@ -203,7 +203,7 @@ export function ContactForm() {
                   </FormLabel>
                   <Select
                     onValueChange={field.onChange}
-                    defaultValue={field.value}
+                    value={field.value}
                     disabled={isSubmitting}
                   >
                     <FormControl>
@@ -239,7 +239,7 @@ export function ContactForm() {
                   </FormLabel>
                   <FormControl>
                     <Input
-                      placeholder="예: 아이폰16 Pro, 갤럭시 S24"
+                      placeholder="예: 아이폰17 Pro, 갤럭시 S25"
                       className="h-12 text-base rounded-xl border-gray-200 focus:border-[#E4002B] focus:ring-[#E4002B]/20"
                       disabled={isSubmitting}
                       {...field}

@@ -274,14 +274,17 @@ function BenefitsSection() {
 
 /** 실시간 상담 접수 현황 데이터 */
 const CONSULTATION_DATA = [
-  { name: '김*수', phone: '010-1234-**78', device: '아이폰17 Pro', time: '방금 전' },
+  { name: '김*식', phone: '010-1234-**78', device: '아이폰17 Pro', time: '방금 전' },
   { name: '이*영', phone: '010-9876-**21', device: '갤럭시 S25 Ultra', time: '1분 전' },
   { name: '박*준', phone: '010-5555-**33', device: '아이폰17', time: '2분 전' },
-  { name: '최*희', phone: '010-3333-**99', device: '갤럭시 Z플립7', time: '3분 전' },
-  { name: '정*민', phone: '010-7777-**44', device: '아이폰17 Pro Max', time: '4분 전' },
-  { name: '강*우', phone: '010-2222-**66', device: '갤럭시 S25+', time: '5분 전' },
-  { name: '윤*서', phone: '010-8888-**11', device: '아이폰15 Plus', time: '6분 전' },
+  { name: '김*희', phone: '010-3333-**99', device: '갤럭시 Z플립7', time: '3분 전' },
+  { name: '선*식', phone: '010-0000-**67', device: '갤럭시 A36', time: '4분 전' },
+  { name: '정*민', phone: '010-7777-**44', device: '아이폰17 Pro Max', time: '5분 전' },
+  { name: '강*우', phone: '010-2222-**66', device: '갤럭시 S25+', time: '6분 전' },
   { name: '장*현', phone: '010-4444-**55', device: '갤럭시 Z폴드7', time: '7분 전' },
+  { name: '조*정', phone: '010-0001-**26', device: '갤럭시 S25', time: '8분 전' },
+  { name: '천*구', phone: '010-0000-**77', device: '아이폰17', time: '9분 전' },
+  { name: '김*조', phone: '010-0000-**14', device: '갤럭시 Z플립7', time: '10분 전' },
 ];
 
 /** 실시간 상담 접수 현황 섹션 */
