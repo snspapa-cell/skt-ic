@@ -96,17 +96,10 @@ export function ContactForm() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
+      // API 호출 시뮬레이션 (실제 구현 시 교체)
+      await new Promise((resolve) => setTimeout(resolve, 1500));
 
-      const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(result.error || '상담 신청에 실패했습니다.');
-      }
+      console.log('Form submitted:', data);
 
       toast({
         title: '상담 신청이 완료되었습니다',
@@ -118,7 +111,7 @@ export function ContactForm() {
       console.error('Submit error:', error);
       toast({
         title: '상담 신청에 실패했습니다',
-        description: error instanceof Error ? error.message : '잠시 후 다시 시도해주세요.',
+        description: '잠시 후 다시 시도해주세요.',
         variant: 'destructive',
       });
     } finally {
@@ -200,7 +193,7 @@ export function ContactForm() {
                   </FormLabel>
                   <Select
                     onValueChange={field.onChange}
-                    value={field.value}
+                    defaultValue={field.value}
                     disabled={isSubmitting}
                   >
                     <FormControl>

@@ -51,3 +51,4 @@ COMMENT ON COLUMN consultations.message IS '문의 내용 (선택)';
 COMMENT ON COLUMN consultations.privacy_consent IS '개인정보 수집 동의 여부';
 COMMENT ON COLUMN consultations.status IS '상담 상태 (pending, contacted, completed)';
 
+

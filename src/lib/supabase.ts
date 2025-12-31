@@ -31,3 +31,4 @@ export interface ConsultationInsert {
   privacy_consent: boolean;
 }
 
+
