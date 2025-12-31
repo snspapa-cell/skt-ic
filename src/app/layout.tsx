@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Providers from './providers';
 import { Navigation } from '@/components/navigation';
+import { Footer } from '@/components/footer';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
@@ -29,6 +30,7 @@ export default function RootLayout({
         <Providers>
           <Navigation />
           <main className="pt-16">{children}</main>
+          <Footer />
           <Toaster />
         </Providers>
       </body>

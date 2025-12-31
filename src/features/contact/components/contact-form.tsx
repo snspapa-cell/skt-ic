@@ -26,6 +26,7 @@ import {
 } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2, Send } from 'lucide-react';
+import Link from 'next/link';
 
 /** 가입 유형 옵션 */
 const SUBSCRIPTION_TYPES = [
@@ -96,10 +97,19 @@ export function ContactForm() {
     setIsSubmitting(true);
 
     try {
-      // API 호출 시뮬레이션 (실제 구현 시 교체)
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      const response = await fetch('/api/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
 
-      console.log('Form submitted:', data);
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || '상담 신청에 실패했습니다.');
+      }
 
       toast({
         title: '상담 신청이 완료되었습니다',
@@ -111,7 +121,7 @@ export function ContactForm() {
       console.error('Submit error:', error);
       toast({
         title: '상담 신청에 실패했습니다',
-        description: '잠시 후 다시 시도해주세요.',
+        description: error instanceof Error ? error.message : '잠시 후 다시 시도해주세요.',
         variant: 'destructive',
       });
     } finally {
@@ -278,7 +288,14 @@ export function ContactForm() {
                   </FormControl>
                   <div className="space-y-1 leading-none">
                     <FormLabel className="text-gray-700 font-medium text-sm cursor-pointer">
-                      개인정보 수집 및 이용에 동의합니다
+                      <Link 
+                        href="/privacy" 
+                        target="_blank"
+                        className="underline hover:text-[#E4002B] transition-colors"
+                      >
+                        개인정보 수집 및 이용
+                      </Link>
+                      에 동의합니다
                       <span className="text-[#E4002B]"> *</span>
                     </FormLabel>
                     <p className="text-xs text-gray-400">

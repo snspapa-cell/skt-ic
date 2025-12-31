@@ -21,6 +21,7 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { ContactForm } from '@/features/contact/components/contact-form';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -128,9 +129,15 @@ function HeroSection() {
           >
             <div className="bg-white rounded-2xl shadow-lg shadow-gray-200/50 p-4 max-w-md mx-auto border border-gray-100">
               <div className="flex items-center gap-3">
-                {/* KAIT 인증 아이콘 */}
-                <div className="w-12 h-12 bg-[#E4002B]/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <BadgeCheck className="w-6 h-6 text-[#E4002B]" />
+                {/* KAIT 인증 로고 */}
+                <div className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden">
+                  <Image
+                    src="/kait-logo.png"
+                    alt="사전승낙판매점 인증 로고"
+                    width={56}
+                    height={56}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 
                 {/* 인증 정보 */}
@@ -215,10 +222,10 @@ function BenefitsSection() {
             Special Benefits
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            빠르게 성장하고 있는 팀을 위한
+            SKT 공식인증센터만의 특별 혜택
           </h2>
           <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-            SKT 공식인증대리점만의 특별한 혜택을 확인해보세요
+            고객님께 최고의 조건을 제공해드리기 위해 최선을 다합니다.
           </p>
         </div>
 
@@ -267,14 +274,14 @@ function BenefitsSection() {
 
 /** 실시간 상담 접수 현황 데이터 */
 const CONSULTATION_DATA = [
-  { name: '김*수', phone: '010-1234-**78', device: '아이폰16 Pro', time: '방금 전' },
-  { name: '이*영', phone: '010-9876-**21', device: '갤럭시 S24 Ultra', time: '1분 전' },
-  { name: '박*준', phone: '010-5555-**33', device: '아이폰16', time: '2분 전' },
-  { name: '최*희', phone: '010-3333-**99', device: '갤럭시 Z플립6', time: '3분 전' },
-  { name: '정*민', phone: '010-7777-**44', device: '아이폰16 Pro Max', time: '4분 전' },
-  { name: '강*우', phone: '010-2222-**66', device: '갤럭시 S24+', time: '5분 전' },
-  { name: '윤*서', phone: '010-8888-**11', device: '아이폰16 Plus', time: '6분 전' },
-  { name: '장*현', phone: '010-4444-**55', device: '갤럭시 Z폴드6', time: '7분 전' },
+  { name: '김*수', phone: '010-1234-**78', device: '아이폰17 Pro', time: '방금 전' },
+  { name: '이*영', phone: '010-9876-**21', device: '갤럭시 S25 Ultra', time: '1분 전' },
+  { name: '박*준', phone: '010-5555-**33', device: '아이폰17', time: '2분 전' },
+  { name: '최*희', phone: '010-3333-**99', device: '갤럭시 Z플립7', time: '3분 전' },
+  { name: '정*민', phone: '010-7777-**44', device: '아이폰17 Pro Max', time: '4분 전' },
+  { name: '강*우', phone: '010-2222-**66', device: '갤럭시 S25+', time: '5분 전' },
+  { name: '윤*서', phone: '010-8888-**11', device: '아이폰15 Plus', time: '6분 전' },
+  { name: '장*현', phone: '010-4444-**55', device: '갤럭시 Z폴드7', time: '7분 전' },
 ];
 
 /** 실시간 상담 접수 현황 섹션 */
@@ -386,35 +393,35 @@ function TestimonialsSection() {
   const testimonials = [
     {
       name: '김*현',
-      device: '아이폰16 Pro',
+      device: '아이폰17 Pro',
       content:
         '다른 대리점 여러 군데 비교해봤는데 여기가 제일 혜택이 좋았어요. 상담도 친절하고 빠르게 진행해주셔서 만족합니다!',
       rating: 5,
     },
     {
       name: '이*수',
-      device: '갤럭시 S24 Ultra',
+      device: '갤럭시 S25 Ultra',
       content:
         '기기값 지원금이 정말 많이 나와서 놀랐어요. 사은품도 다양하게 챙겨주시고 정말 감사합니다.',
       rating: 5,
     },
     {
       name: '박*영',
-      device: '갤럭시 Z플립6',
+      device: '갤럭시 Z플립7',
       content:
         '번호이동 절차가 복잡할 줄 알았는데 다 알아서 해주셔서 편했어요. 다음에도 여기서 할 예정입니다.',
       rating: 5,
     },
     {
       name: '최*민',
-      device: '아이폰16',
+      device: '아이폰17',
       content:
         '요금제 상담도 꼼꼼하게 해주시고 제 사용 패턴에 맞는 요금제를 추천해주셔서 매달 절약하고 있어요!',
       rating: 5,
     },
     {
       name: '정*호',
-      device: '갤럭시 S24+',
+      device: '갤럭시 S25+',
       content:
         '처음에 온라인으로 상담 신청했는데 바로 연락주시고 빠르게 처리해주셨어요. 추천합니다!',
       rating: 5,
@@ -522,19 +529,13 @@ function LocationSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* 왼쪽: 매장 정보 */}
-          <div className="space-y-4 order-2 lg:order-1">
+          <div className="flex flex-col gap-4 order-2 lg:order-1 lg:min-h-[500px]">
             {[
               {
                 icon: MapPin,
                 title: '주소',
-                content: '서울특별시 강남구 테헤란로 123',
-                sub: '(역삼동, OO빌딩 1층)',
-              },
-              {
-                icon: Phone,
-                title: '전화번호',
-                content: '02-1234-5678',
-                sub: '상담 가능 시간에 연락주세요',
+                content: '광주광역시 동구 금남로 161-5',
+                sub: '(광주광역시 동구 금남로5가 29)',
               },
               {
                 icon: Clock,
@@ -545,8 +546,8 @@ function LocationSection() {
               {
                 icon: Navigation,
                 title: '오시는 길',
-                content: '역삼역 3번 출구 도보 5분',
-                sub: '건물 지하주차장 2시간 무료',
+                content: '금남로5가역 1번 출구 도보 3분',
+                sub: '인근 공영주차장 이용 가능',
               },
             ].map((item, index) => (
               <motion.div
@@ -555,9 +556,10 @@ function LocationSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="flex-1"
               >
-                <Card className="bg-[#FDF9F7] border-0 rounded-2xl">
-                  <CardContent className="p-5">
+                <Card className="bg-[#FDF9F7] border-0 rounded-2xl h-full">
+                  <CardContent className="p-5 h-full flex items-center">
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 rounded-xl bg-[#E4002B]/10 flex items-center justify-center flex-shrink-0">
                         <item.icon className="w-6 h-6 text-[#E4002B]" />
@@ -586,7 +588,7 @@ function LocationSection() {
           >
             <div className="w-full h-[400px] lg:h-full lg:min-h-[500px] rounded-3xl overflow-hidden shadow-lg shadow-gray-200/50">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.354736408449!2d127.0322891!3d37.4999511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca159b0753c5d%3A0x5e8a3b7e3e8b3c8e!2z7Jew7IKw7Jet!5e0!3m2!1sko!2skr!4v1234567890"
+                src="https://www.google.com/maps?q=광주광역시+동구+금남로+161-5&output=embed&z=17"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -751,18 +753,14 @@ function ContactSection() {
                 최적의 요금제와 혜택을 안내해드립니다.
               </p>
 
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 text-gray-300">
-                  <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center">
-                    <Phone className="w-5 h-5" />
-                  </div>
-                  <span>02-1234-5678</span>
+              <div className="flex items-start gap-3 text-gray-300">
+                <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Clock className="w-5 h-5" />
                 </div>
-                <div className="flex items-center gap-3 text-gray-300">
-                  <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center">
-                    <Clock className="w-5 h-5" />
-                  </div>
-                  <span>평일 10:00 - 20:00</span>
+                <div>
+                  <p className="font-medium">운영시간</p>
+                  <p>평일 10:00 - 20:00</p>
+                  <p className="text-sm text-gray-400">토요일 11:00 - 18:00 / 일요일 휴무</p>
                 </div>
               </div>
             </motion.div>
